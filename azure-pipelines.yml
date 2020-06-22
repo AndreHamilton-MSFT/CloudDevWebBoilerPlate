@@ -19,7 +19,8 @@ steps:
   inputs:
     containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'anhamilt(249572df-0ca0-46f8-8a3d-f46987d7fc85)'
-    dockerComposeFile: '**/Dockerfile'
+    azureContainerRegistry: '{"loginServer":"anhamiltc1t1.azurecr.io", "id" : "/subscriptions/249572df-0ca0-46f8-8a3d-f46987d7fc85/resourceGroups/mcr-global-rg/providers/Microsoft.ContainerRegistry/registries/anhamiltc1t1"}'
+    dockerComposeFile: 'Dockerfile'
     action: 'Build services'
 - task: PublishBuildArtifacts@1
   inputs:
