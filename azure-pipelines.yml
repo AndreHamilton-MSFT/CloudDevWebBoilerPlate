@@ -15,6 +15,12 @@ steps:
     SourceFolder: 'web'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'anhamilt(249572df-0ca0-46f8-8a3d-f46987d7fc85)'
+    dockerComposeFile: '**/Dockerfile'
+    action: 'Build services'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
